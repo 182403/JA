@@ -1,0 +1,2 @@
+# JA
+Zerlegung von Zahlen
