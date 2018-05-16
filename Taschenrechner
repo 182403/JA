@@ -1,0 +1,54 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package taschenrechner;
+
+/**
+ *
+ * @author johan
+ */
+
+import java.util.Scanner;
+public class Taschenrechner {
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner ts= new Scanner(System.in);
+        System.out.print("Bitte Eingabe Operator(+, -, *, /, q): ");
+        char optr = ts.next().charAt(0);
+        while (optr != 'q'){
+        System.out.print("Bitte Eingabe Operant1: ");
+        float opr1 = ts.nextFloat();
+        System.out.print("Bitte Eingabe Operant2: ");
+        float opr2 = ts.nextFloat();
+        
+        
+        float ergebnis = calculate(optr, opr1, opr2);
+        if (ergebnis != 'f'){
+        System.out.println((opr1) + " " + (optr) + " "+ (opr2) + " = " + ergebnis);
+        } else {
+        System.out.println("Ungültige Eingabe");
+        }
+        System.out.println("");
+        System.out.print("Bitte Eingabe Operator(+, -, *, /, q): ");
+        optr = ts.next().charAt(0);
+    }
+    }
+
+    static float calculate(char optr, float opr1, float opr2){
+        switch (optr) {
+        case '+':
+            return opr1 + opr2;
+        case '-':
+            return opr1 - opr2;
+        case '*':
+            return opr1 * opr2;
+        case '/':
+            return opr1 / opr2;
+        default:
+            return 'f';
+        }
+    }
+}
