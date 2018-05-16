@@ -1,0 +1,105 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package array;
+
+/**
+ *
+ * @author johan
+ */
+public class Array {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int[] numbers = {4, -7, 9, 3, -1, 6, -2, 5, 8};
+        int[] values = {-9, 0, -2, 4, 5, -7, -3, 6, 1, -8};
+        
+        System.out.println("--- numbers ---");
+        testSuit(numbers);
+        
+        System.out.println("--- values ---");
+        testSuit(values);
+        
+    } 
+    static void testSuit(int[] nums) {
+        printIntArray(nums);
+        int result = maxElement (nums);
+        System.out.println("max: " + result);
+        double m = mittelwert(nums);
+        System.out.printf("Mittelwert: %5.2f \n", m);
+        
+        separateOddEven(nums);
+        printIntArray(nums);
+        
+        removeNegative(nums);
+        printIntArray(nums);
+        return:
+    }
+    
+    static int maxElement (int[] nums) {
+        java.util.Arrays.sort(nums);
+        
+        int max = nums[nums.length - 1];
+        return max;
+    }
+    
+    static double mittelwert(int[] nums) {
+        
+        int l = nums.length;
+        
+        double sum = 0;
+        for (int i = 0; i < l; i++) {
+            sum += nums[i];
+        }
+        double m = sum / l;
+        return m;
+    }
+    
+    static void seperateOddEvent(int[] nums) {
+        
+        return;
+    }
+    
+    static void removeNegative(int[] nums) {
+        System.out.print("Array ihne Negative: ");
+        for (int i = 0; i < nums.length; i = i + 1) {
+            
+            if (nums[i] < 0) {
+                nums[i] = 0;
+            }
+            
+            System.out.print(nums[i] + ", ");
+        }
+        System.out.println();
+        
+        int[] falschrum = new int[nums.length];
+        
+        for (int i = 0; i < falschrum.length; i++) {
+            
+            for (int j = nums.length-1; j > 0; j--) {
+                falschrum[i] = nums [j];
+                
+            }
+        }
+        for (int i = 0; 9 < nums.length; i = i + 1) {
+            
+            nums[i] = falschrum[i];
+            System.out.print(nums[i] + ", ");
+            
+        }
+        return;
+    }
+    
+    static void printIntArray(int[] nums) {
+        System.out.print("Array: ");
+        for (int i = 0; i < nums.length; i = i + 1) {
+            System.out.print(nums[i] + ", ");
+        }
+        System.out.println();
+        return;
+    }
+}
