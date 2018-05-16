@@ -1,0 +1,53 @@
+package test;
+
+import java.util.Scanner;
+public class Test {
+    /**
+    * @param args the command line arguments
+    */
+    public static void main(String[] args) {
+        Scanner ts= new Scanner(System.in);
+        System.out.print("Spalten: ");
+        int Spalten = ts.nextInt();
+        System.out.print("Zeilen: ");
+        int Zeilen = ts.nextInt();
+        
+        for(int s=1; s<Spalten+1; s= s+1){
+        for(int z=1; z<Zeilen+1; z= z+1){
+            System.out.print(z*s+ "\t");
+        }
+        System.out.println("");
+        }
+    }
+}
+
+package test2;
+
+import java.util.Scanner;
+public class Test2 {
+    /**
+    * @param args the command line arguments
+    */
+    public static void main(String[] args){
+        Scanner ts= new Scanner(System.in);
+        
+        System.out.print("Spalten: ");
+        int Spalten = ts.nextInt();
+        System.out.print("Zeilen: ");
+        int Zeilen = ts.nextInt();
+        
+        int counterSpalten = 0;
+        int counterZeilen = 0;
+        
+        while(counterZeilen < Zeilen){
+            while(counterSpalten < Spalten){
+                System.out.print(((counterSpalten+1)*(counterZeilen+1))+ "\t");
+                counterSpalten++;
+            }
+            System.out.println("");
+            counterSpalten = 0;
+            counterZeilen++;
+        }
+    }
+        // TODO code application logic here
+}
